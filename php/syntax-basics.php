@@ -26,7 +26,6 @@
 <?php endif; ?>
 
 <!-- Коментарии  -->
-<?php
  /** 
  ccxvcxzv
  zxczxczxc
