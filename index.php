@@ -7,4 +7,5 @@
     <li><a href="/php/operators.php">Operators</a></li>
     <li><a href="/php/control-structures.php">control-structures</a></li>
     <li><a href=""></a></li>
+    <li><a href="/php/tasks/block-1.php">Block 1</a></li>
 </ul>
