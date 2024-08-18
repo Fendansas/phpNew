@@ -21,3 +21,17 @@ if( $number > 0){
 ?>
 </h3> 
 
+
+<h2>1.1</h2>
+<h3>2</h3>
+<p>Дана строка. Выведите в консоль длину этой строки.</p>
+<form action="block-1.php" method="post">
+Видите строку: <input type="text" name="text"><br>
+<input type="submit" name="submit" value="Ответ">
+</form>
+<h3> Длинна строки = 
+<?php 
+    echo mb_strlen($_POST['text']);
+?>
+</h3> 
+
