@@ -184,6 +184,51 @@ foreach ($arr as $key => $value) {
 }
 
 
+// switch
+$i = 1;
+switch ($i) {
+    case 0:
+        echo "i равно 0";
+        break;
+    case 1:
+        echo "i равно 1";
+        break;
+    case 2:
+        echo "i равно 2";
+        break;
+}
+
+// допускается сравнение со строкой
+$i = 'шоколадка';
+switch ($i) {
+    case "яблоко":
+        echo "i это яблоко";
+        break;
+    case "шоколадка":
+        echo "i это шоколадка";
+        break;
+    case "пирог":
+        echo "i это пирог";
+        break;
+}
+
+// Специальный вид конструкции case - default. Сюда управление попадает тогда,
+//  когда не сработал ни один из других операторов case. Например:
+
+$i = 5;
+    switch ($i) {
+        case 0:
+            echo "i равно 0";
+            break;
+        case 1:
+            echo "i равно 1";
+            break;
+        case 2:
+            echo "i равно 2";
+            break;
+        default:
+           echo "i не равно 0, 1 или 2";
+    }
 
 
 
