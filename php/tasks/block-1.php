@@ -1,7 +1,8 @@
 <?php
 // https://code.mu/ru/php/tasker/stager/   
 ?>
-<h2>1.</h2>
+<h2>1.1</h2>
+<h3>1</h3>
 <p>Дано число. Проверьте, отрицательное оно или нет. Выведите об этом информацию в консоль.</p>
 <form action="block-1.php" method="post">
 Видите чило: <input type="number" name="number"><br>
