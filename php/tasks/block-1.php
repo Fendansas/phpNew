@@ -35,3 +35,20 @@ if( $number > 0){
 ?>
 </h3> 
 
+
+<h2>1.1</h2>
+<h3>3</h3>
+<p>Дана строка. Выведите в консоль последний символ строки.</p>
+<form action="block-1.php" method="post">
+Видите строку: <input type="text" name="text-line"><br>
+<input type="submit" name="submit" value="Ответ">
+</form>
+<h3> Последний символ строки = 
+<?php 
+
+    $string = $_POST['text-line'];
+    $lastChar = mb_substr($string, -1);
+    echo $lastChar;
+?>
+</h3> 
+
