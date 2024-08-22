@@ -52,3 +52,21 @@ if( $number > 0){
 ?>
 </h3> 
 
+// 
+
+<h2>1.1</h2>
+<h3>4</h3>
+<p>Дано число. Проверьте, четное оно или нет.</p>
+<form action="block-1.php" method="post">
+Видите строку: <input type="number" name="number2"><br>
+<input type="submit" name="submit" value="Ответ">
+</form>
+<h3> 
+<?php 
+    if ($_POST['number2'] % 2 == 0){
+    echo 'число четное';
+    } else {
+        echo 'число не четное';
+    }
+?>
+</h3>
