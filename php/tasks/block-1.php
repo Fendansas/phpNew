@@ -70,3 +70,23 @@ if( $number > 0){
     }
 ?>
 </h3>
+
+
+ <!-- Даны два слова. Проверьте, что первые буквы этих слов совпадают. -->
+ <h2>1.1</h2>
+<h3>5</h3>
+<p>Даны два слова. Проверьте, что первые буквы этих слов совпадают.</p>
+<form action="block-1.php" method="post">
+Видите строку 1: <input type="text" name="text51"><br>
+Видите строку 2: <input type="text" name="text52"><br>
+<input type="submit" name="submit" value="Ответ">
+</form>
+<h3> 
+<?php 
+    if ($_POST['text51'][0] == $_POST['text52'][0]){
+    echo 'первые буквы слов совпадают ' .$_POST['text51'][0] . ' равно ' . $_POST['text52'][0] ;
+    } else {
+        echo 'не совпадают';
+    }
+?>
+</h3>
