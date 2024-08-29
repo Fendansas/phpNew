@@ -90,3 +90,27 @@ if( $number > 0){
     }
 ?>
 </h3>
+
+
+
+<h3>6</h3>
+<p>Дано слово. Получите его последнюю букву.
+     Если слово заканчивается на мягкий знак, то получите предпоследнюю букву.</p>
+<form action="block-1.php" method="post">
+Видите лово: <input type="text" name="text-line2"><br>
+<input type="submit" name="submit" value="Ответ">
+</form>
+<h3> Последний символ строки = 
+<?php 
+
+    $text = $_POST['text-line2'];
+    $length = mb_strlen($text);
+    $lastChar = mb_substr($text, $length - 1);
+    if($lastChar !== 'ь') {
+        echo "<br>{$lastChar}";
+    } else {
+        echo "<br>{$text[$length-1]}";
+    }
+
+?>
+</h3> 
