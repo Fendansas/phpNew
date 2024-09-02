@@ -1,6 +1,7 @@
 <?php
 // https://code.mu/ru/php/tasker/stager/   
 ?>
+<a href="https://code.mu/ru/php/tasker/stager/">https://code.mu/ru/php/tasker/stager/   </a>
 <h2>1.1</h2>
 <h3>1</h3>
 <p>Дано число. Проверьте, отрицательное оно или нет. Выведите об этом информацию в консоль.</p>
@@ -92,7 +93,7 @@ if( $number > 0){
 </h3>
 
 
-
+<h2>1.1</h2>
 <h3>6</h3>
 <p>Дано слово. Получите его последнюю букву.
      Если слово заканчивается на мягкий знак, то получите предпоследнюю букву.</p>
@@ -112,5 +113,23 @@ if( $number > 0){
         echo "<br>{$text[$length-1]}";
     }
 
+?>
+</h3> 
+
+<h2>1.2</h2>
+<h3>1</h3>
+<p>Дано число. Выведите в консоль первую цифру этого числа.</p>
+<form action="block-1.php" method="post">
+Видите число: <input type="number" name="num-line2"><br>
+<input type="submit" name="submit" value="Ответ">
+</form>
+<h3> Первая цифра = 
+<?php 
+
+    $num = $_POST['num-line2'];
+
+    $firstDigit = (int) $num[0];
+        echo "{$firstDigit}<br>";
+    
 ?>
 </h3> 
