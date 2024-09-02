@@ -1,25 +1,26 @@
-version: '3.1'
-
 services:
-   db_mysql:
-      container_name: db_mysql
-      image: mysql
-      ports:
-        - "3311:3306"
-      restart: always
-      environment:
-        MYSQL_USER: root
-        MYSQL_PASSWORD: root
-        MYSQL_ROOT_PASSWORD: root
-      volumes:
-        - /var/lib/mysqld:/var/lib/mysql
-   phpmyadmin:
-      container_name: phpmyadmin
-      image: phpmyadmin
-      restart: always
-      ports:
-        - "8080:80"
-      environment:
-        - PMA_HOST=db_mysql
-      depends_on:
-        - db_mysql
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: root
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+    ports:
+      - "3306:3306"
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    links:
+      - db
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+      UPLOAD_LIMIT: 300M
