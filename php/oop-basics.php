@@ -105,7 +105,7 @@ echo '<br>';
 var_dump($someObject2);
 echo '<br>';
 
-// https://www.php.net/manual/ru/language.oop5.basic.php
+
 
 // #6 Новые обекты
 
@@ -250,4 +250,122 @@ $extended->displayVar();
     // Fatal error: Declaration of RequiredExtend::foo(int $a) must be compatible
     //  with RequiredBase::foo(int $a = 5) in /var/www/html/php/oop-basics.php on line 246
  }
+
+ // https://www.php.net/manual/ru/language.oop5.basic.php
+
+
+ // Ошибка передачи именованных аргументов в параметры, которые переименовали в дочернем классе
+
+ class Atest {
+    public function test($foo, $bar){}
+ }
+class Btest extends Atest {
+    public function test($a, $b){}
+}
+$atest = new Btest();
+
+// передача параметров согласно контракту метода Atest::test()
+
+// $atest->test(foo: 'foo', bar:'bar');// Ошибка
+// Fatal error: Uncaught Error: Unknown named parameter $foo in /var/www/html/php/oop-basics.php:269 Stack trace:
+ #0 {main} thrown in /var/www/html/php/oop-basics.php on line 269
+
+ // Разрешение имени класс
+//  namespace NS {
+    class ClassName{}
+    echo ClassName::class;
+//  }
+
+ // разрешение имени несуществующего класса
+ echo '<br>';
+ print Does\Not\Exist::class;
+
+
+ // Разрешение имени обекта
+ echo '<br>';
+ class ClassName2{}
+ $c = new ClassName2();
+ print $c::class;
+ echo '<br>';
+
+
+ // ПРимеры работы Nullsafe оператора
+
+ // Начиная с PHP 8.0.0
+ $result = $repository?->getUser(5)?->name;
+// Эквивалентна след блоку
+
+if (is_null($repository)){
+    $result = null;
+} else {
+    $user = $repository->getUser(5);
+    if (is_null($user)){
+        $result = null;
+    } else {
+        $result = $user->name;
+    }
+}
+
+// Разница между  $this и self
+
+// Статические функции должны использовать только статические переменные
+// self только для статических функци. Но так же можно вызвать не статический метод
+// как статические через self
+
+// this только для нестатических 
+
+// this требует чтобы класс был проинстацирован self не требует
+
+// $this это ссылка на текущий объект и она нужно чтобы обратится к переменной в контексте класса
+
+class human{
+
+    public $name;
+
+    public function __construct($name){
+    $this->name = $name;
+    // $name = $nameж // будет ошибка 
+    }
+
+
+    // public function klassFunc(){};
+    // function getName(){
+    //     echo $name; //  не правильно обратится не к переменной public name
+    //     echo $this->name; // правильно
+    //     $this->klassFunc(); // вызов метода класса
+    // }
+
+    // self используктся в том же самом ключе но уже для статических свойств
+
+    static $lastName = 'ololol';
+
+    public function klassFunc2(){}
+
+    function getLasName(){
+        echo self:: $lastName; // обращение к lastname
+        echo $this_lasrName; //  null  или ошибка
+    }
+}
+
+//Проверочная программа которая показывает главную разницу между self и this
+
+class Klass{
+    const STAT = 'S'; // константы всегда статичны
+    // $stat = 'Static' ;
+    public $publ = 'Public';
+    private $priv = 'Private';
+    protected $prot = 'Protected';
+
+    function __construct(){}
+
+    public function show(){
+        print '<br> self::STAT: ' . self::STAT;//ссылается а контстанту
+        // print '<br> self::$stat: ' . self::$stat; // статическая переменная
+        // prinе '<br> $this->stat: ' . $this->stat; // Ошибки нет но вывидет пустую строку
+        print '<br> $this->publ: ' . $this->publ;
+        print '<br>';
+    }
+}
+$me = new Klass();
+$me->show();
 
