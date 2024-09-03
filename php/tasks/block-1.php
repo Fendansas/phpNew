@@ -133,3 +133,22 @@ if( $number > 0){
     
 ?>
 </h3> 
+
+
+<h2>1.2</h2>
+<h3>1</h3>
+<p>Дано число. Выведите в консоль последнюю цифру этого числа.</p>
+<form action="block-1.php" method="post">
+Видите число: <input type="number" name="num-line3"><br>
+<input type="submit" name="submit" value="Ответ">
+</form>
+<h3> Первая цифра = 
+<?php 
+
+    $num = $_POST['num-line3'];
+
+    $firstDigit = (int) $num[-1];
+        echo "{$firstDigit}<br>";
+    
+?>
+</h3> 
