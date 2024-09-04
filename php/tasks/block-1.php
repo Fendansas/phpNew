@@ -136,7 +136,7 @@ if( $number > 0){
 
 
 <h2>1.2</h2>
-<h3>1</h3>
+<h3>2</h3>
 <p>Дано число. Выведите в консоль последнюю цифру этого числа.</p>
 <form action="block-1.php" method="post">
 Видите число: <input type="number" name="num-line3"><br>
