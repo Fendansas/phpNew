@@ -152,3 +152,22 @@ if( $number > 0){
     
 ?>
 </h3> 
+
+<h2>1.2</h2>
+<h3>3</h3>
+<p>Дано число. Выведите в консоль сумму первой и последней цифры этого числа.</p>
+<form action="block-1.php" method="post">
+Видите число: <input type="number" name="num-line4"><br>
+<input type="submit" name="submit" value="Ответ">
+</form>
+<h3> сумма первой и последней цифры = 
+<?php 
+
+    $num = $_POST['num-line4'];
+    $firstNum = $num[0];
+    $lastNum = $num[-1];
+    $res = $firstNum + $lastNum;
+        echo "{$res}<br>";
+    
+?>
+</h3> 
