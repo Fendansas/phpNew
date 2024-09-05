@@ -171,3 +171,22 @@ if( $number > 0){
     
 ?>
 </h3> 
+
+Дано число. Выведите количество цифр в этом числе.
+
+<h2>1.2</h2>
+<h3>4</h3>
+<p>Дано число. Выведите количество цифр в этом числе.</p>
+<form action="block-1.php" method="post">
+Видите число: <input type="number" name="num-line5"><br>
+<input type="submit" name="submit" value="Ответ">
+</form>
+<h3> Колличество цыфр в числе = 
+<?php 
+
+    $num1 = $_POST['num-line5'];
+    $quantity = strlen($num1);
+        echo "{$quantity}<br>";
+    
+?>
+</h3> 
