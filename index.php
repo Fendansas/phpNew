@@ -19,7 +19,7 @@
     <li><a href="/php/functions.php">Functions</a></li>
     <li><a href="/php/oop-basics.php">OOP Basics</a></li>
     <li><a href="/php/properties.php">Properties</a></li>
-    <li><a href=""></a></li>
+    <li><a href="/php/class_constants.php">Class Constants</a></li>
     <li><a href=""></a></li>
     <li><a href=""></a></li>
     <li><a href=""></a></li>
