@@ -20,8 +20,8 @@
     <li><a href="/php/oop-basics.php">OOP Basics</a></li>
     <li><a href="/php/properties.php">Properties</a></li>
     <li><a href="/php/class_constants.php">Class Constants</a></li>
-    <li><a href=""></a></li>
-    <li><a href=""></a></li>
+    <li><a href="/php/construct.php">construct</a></li>
+    <li><a href="/php/visability.php">visability</a></li>
     <li><a href=""></a></li>
     
     <li><a href="/php/tasks/block-1.php">Block 1</a></li>
