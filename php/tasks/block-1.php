@@ -190,3 +190,27 @@ if( $number > 0){
     
 ?>
 </h3> 
+
+<h2>1.2</h2>
+<h3>5</h3>
+<p>Даны два числа. Проверьте, что первые цифры этих чисел совпадают.</p>
+<form action="block-1.php" method="post">
+Видите число 1: <input type="number" name="num-line3"><br>
+
+Видите число 2: <input type="number" name="num-line4"><br>
+<input type="submit" name="submit" value="Ответ">
+</form>
+<h3> Первая цифра = 
+<?php 
+
+    $num1 = $_POST['num-line3'];
+    $num2 = $_POST['num-line4'];
+    if ($num1[0] == $num2[0]){
+        echo "{$num1[0]} первое чилсо введенных чифр<br>";
+    }else{
+        echo "{$num1[0]} =/ {$num2[0]} первые числа не равны<br>";
+    }
+
+    
+?>
+</h3> 
