@@ -214,3 +214,22 @@ if( $number > 0){
     
 ?>
 </h3> 
+
+
+<h2>1.3</h2>
+<h3>1</h3>
+<p>Дана строка. Если в этой строке более одного символа, выведите в консоль предпоследний символ этой строки.</p>
+<form action="block-1.php" method="post">
+Видите строку: <input type="text" name="text1-3-1"><br>
+<input type="submit" name="submit" value="Ответ">
+</form>
+<h3> последний символ строки
+<?php 
+    $str = $_POST['text1-3-1'];
+    if (mb_strlen($_POST['text1-3-1']) > 1){
+        echo mb_substr($str, -1);
+    } else {
+    echo '-----------------';
+    }
+?>
+</h3> 
