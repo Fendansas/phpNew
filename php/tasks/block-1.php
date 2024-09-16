@@ -233,3 +233,26 @@ if( $number > 0){
     }
 ?>
 </h3> 
+
+<h2>1.3</h2>
+<h3>2</h3>
+<p>Даны два целых числа. Проверьте, что первое число без остатка делится на второе.</p>
+<form action="block-1.php" method="post">
+Видите число 1: <input type="number" name="num-line5"><br>
+
+Видите число 2: <input type="number" name="num-line6"><br>
+<input type="submit" name="submit" value="Ответ">
+</form>
+<h3> Первая цифра = 
+<?php 
+
+    $number1 = $_POST['num-line5'];
+    $number2 = $_POST['num-line6'];
+    $unsver = $number1 % $number2;
+    if ($unsver == 0){
+        echo  $number1 .  " делется без остатка <br>";
+    } else {
+        echo  $number1 .  " делется c остатком <br>"; 
+    }
+?>
+</h3> 
