@@ -2,6 +2,8 @@
 
 // Наследование
 
+use MyClass as GlobalMyClass;
+
 class Foo {
     public function printItem($string){
         echo 'Foo: ' . $string . '<br>';
@@ -62,4 +64,52 @@ class MyDateTime3 extends DateTime{
     }
 }
 
+// Оператор разрешения области видимости
 
+// Использование :: вне обявления класса
+
+class MyClass {
+    const CONST_VALUE = 'Значение константы';
+}
+$className = 'MyClass';
+
+echo $className::CONST_VALUE;
+echo  '<br>';
+echo MyClass::CONST_VALUE;
+echo  '<br>';
+
+
+//  Использование :: внутри объявления класса
+
+class OtherClass extends MyClass{
+    public static $my_static = 'статическая переменная';
+
+    public static function doubleColon(){
+        echo parent::CONST_VALUE;
+        echo  '<br>';
+        echo self::$my_static;
+        echo  '<br>';
+    }
+}
+
+$classname = 'OtherClass';
+// $className::doubleColon();
+
+OtherClass::doubleColon();
+
+
+// обращение к методу в родительком классе
+
+ class SecondClass{
+    protected function myFunc(){
+        echo 'SecondClass::myFunc()<br>';
+    }
+ }
+ class SecondClass2 extends SecondClass{
+    public function myFunc(){
+        parent::myFunc();
+        echo 'SecondClass2::myFunc()<br>';
+    }
+ }
+$class = new SecondClass2();
+$class->myFunc();
