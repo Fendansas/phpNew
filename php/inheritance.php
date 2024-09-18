@@ -113,3 +113,128 @@ OtherClass::doubleColon();
  }
 $class = new SecondClass2();
 $class->myFunc();
+
+// Ключивое слово static
+
+// Пример статического метода
+
+class Foo2 {
+    public static function aStaticMethod(){
+        echo 'sas';
+    }
+}
+Foo2::aStaticMethod();
+$className = 'Foo2';
+$className::aStaticMethod();
+
+
+// Пример статичекого свойства 
+
+class stasicClass{
+    public static $my_static = 'foo';
+
+    public function staticValue(){
+        return self::$my_static;
+    }
+}
+
+class stasicClass2 extends stasicClass{
+    public function fooStatic(){
+        return parent::$my_static;
+    }
+}
+
+print stasicClass::$my_static;
+echo  '<br>';
+ $staticClass = new stasicClass();
+print $staticClass->staticValue();
+echo  '<br>';
+print $staticClass->$my_static;
+echo  '<br>';
+print $staticClass::$my_static;
+echo  '<br>';
+$name = 'stasicClass';
+print $name::$my_static;
+echo  '<br>';
+print stasicClass2::$my_static;
+echo  '<br>';
+$name2 = new stasicClass2;
+print $name2->fooStatic();
+
+// Абсрактные классы
+
+// Пример обстрактного класса
+
+abstract class AbctractClass{
+    //данные методы должны быть определены в дочернем класс
+    abstract protected function getValue();
+    abstract protected function prefixValue($prefis);
+
+    // Общий метод
+
+    public function printOut()  {
+        print $this->getValue();
+        echo  '<br>';
+    }
+}
+
+class ConcreteClass extends AbctractClass{
+
+    protected function getValue()
+    {
+        return 'ConcreteClass';
+    }
+    public function prefixValue($prefix){
+        return "{$prefix} ConcreteClass";
+
+    }
+
+}
+class ConcreteClass2 extends AbctractClass{
+    protected function getValue()
+    {
+        return 'ConcreteClass2';
+    }
+    public function prefixValue($prefix){
+        return "{$prefix} ConcreteClass2";
+
+    }
+}
+$concreteClass =new ConcreteClass();
+echo  '<br>';
+$concreteClass->printOut();
+echo  '<br>';
+echo $concreteClass->prefixValue('FOO_');
+echo  '<br>';
+
+$concreteClass2 = new ConcreteClass2();
+
+$concreteClass2->printOut();
+echo  '<br>';
+echo $concreteClass2->prefixValue('FOO_');
+echo  '<br>';
+
+// ПРимер обстрактного класса 2
+
+abstract class Sas{
+    abstract protected function prefixName($name);
+}
+
+class Sas1 extends Sas{
+    public function prefixName($name, $separator = "."){
+        if($name =='Pacman'){
+            $prefix = 'Mr';
+        } elseif($name == 'Pacwoman'){
+            $prefix = 'Mrs';
+        } else {
+            $prefix = '';
+        }
+
+        return "{$prefix}{$separator}{$name}";
+    }
+} 
+$sas = new Sas1();
+echo  '<br>';
+echo $sas->prefixName('Pacman');
+echo  '<br>';
+echo $sas->prefixName('Pacwoman');
