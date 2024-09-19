@@ -23,7 +23,7 @@
     <li><a href="/php/construct.php">construct</a></li>
     <li><a href="/php/visability.php">visability</a></li>
     <li><a href="/php/inheritance.php">inheritance</a></li>
-    <li><a href="/php/inheritance.php">inheritance</a></li>
+    <li><a href="/php/interfaces.php">interfaces</a></li>
     <li><a href="/php/inheritance.php">inheritance</a></li>
     <li><a href="/php/inheritance.php">inheritance</a></li>
     <li><a href="/php/inheritance.php">inheritance</a></li>
