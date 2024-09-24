@@ -24,7 +24,7 @@
     <li><a href="/php/visability.php">visability</a></li>
     <li><a href="/php/inheritance.php">inheritance</a></li>
     <li><a href="/php/interfaces.php">interfaces</a></li>
-    <li><a href="/php/inheritance.php">inheritance</a></li>
+    <li><a href="/php/traits.php">traits</a></li>
     <li><a href="/php/inheritance.php">inheritance</a></li>
     <li><a href="/php/inheritance.php">inheritance</a></li>
     <li><a href="/php/inheritance.php">inheritance</a></li>
