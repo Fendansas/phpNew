@@ -238,3 +238,75 @@ class Exam {
 }
 
 Exam::doSomething();
+
+// статические свойства
+
+trait StaticExample2 {
+    public static $static = 'foo';
+}
+
+class Example2 {
+    use StaticExample2;
+}
+echo Example2::$static;
+
+// Определение свойств
+
+trait ProprtiesTrait{
+    public $x = 1;
+}
+
+class PropirtiesExample {
+    use ProprtiesTrait;
+}
+
+$example = new PropirtiesExample;
+
+$example->x;
+
+// Разрешение конфликтов
+
+trait ProprtiesTrait2{
+    public $same = true;
+    public $different1 = false;
+    public bool $different2;
+    public bool $different3;
+}
+
+class PropirtiesExample2{
+    use ProprtiesTrait2;
+
+    public $same = true;
+//     public $different1 = true; // Фатальная ошибка
+//     public string $different2; // Фатальная ошибка
+//     readonly protected bool $different3; // Фатальная ошибка
+}
+
+
+// определение констант
+
+trait ConstantTrait{
+    public const FLAG_MUTABLE = 1;
+    final public const FLAG_IMMUNABLE = 5;
+}
+
+class ConstantExample{
+    use ConstantTrait;
+}
+
+$sass = new ConstantExample;
+
+$sass::FLAG_MUTABLE; // 1
+
+// Разрешение конфликтов 
+
+trait ConstantTrait2 {
+    public const FLAG_MUTABLE = 1;
+    final public const FLAG_IMMUNABLE = 5;
+
+}
+
+class ConstantEcample2 {
+    use ConstantTrait2;
+    // public const FLAG_IMMUNABLE = 5; // Фатальная ошибка
+}
